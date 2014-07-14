@@ -1,0 +1,13 @@
+{
+    "rpas": {
+        "name": "RPAS REST API Documentation",
+        "protocol": "http",
+        "baseURL": "localhost:3000",
+        "publicPath": "",
+        "privatePath": "/v2",
+        "basicAuth": true,
+        "keyParam":"x-its-rpas",
+        "booleanTrueVal": true,
+        "booleanFalseVal": false
+    }
+}
