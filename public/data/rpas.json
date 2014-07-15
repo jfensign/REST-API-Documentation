@@ -39,7 +39,461 @@
                     "Synopsis": "HTTP Basic Authentication."         
                 }            
             ]
-        },    
+        },
+        {
+            "path": "/v1/data_sources",
+            "name": "Data Sources",
+            "methods": [
+                {
+                    "MethodName": "List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        }                        
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/data_sources",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List all data sources."
+                },
+                {
+                    "MethodName": "Select",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "data_source_id",
+                            "Location": "URI",
+                            "Description": "RPAS List ID"                            
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "int",
+                            "Name": "verson",
+                            "Location": "query",
+                            "Description": "File version."                            
+                        }                                                                                                                               
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/data_sources/:data_source_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a data source."
+                }                               
+            ]
+        },        
+        {
+            "path": "/v1/disclosures",
+            "name": "Disclosures",
+            "methods": [
+                {
+                    "MethodName": "List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        }                        
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/disclosures",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List all disclosures."
+                },
+                {
+                    "MethodName": "Select",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "disclosure_id",
+                            "Location": "URI",
+                            "Description": "RPAS List ID"                            
+                        }                                                                                                       
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/disclosures/:disclosure_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a disclosure."
+                }                               
+            ]
+        },
+        {
+            "path": "/v1/documents",
+            "name": "Documents",
+            "methods": [
+                {
+                    "MethodName": "List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        }                                                                                  
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/documents",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List all documents."
+                },
+                {
+                    "MethodName": "Select",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "document_id",
+                            "Location": "URI",
+                            "Description": "RPAS DocumentID"                            
+                        }                                                                                                       
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/documents/:document_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a document."
+                }                               
+            ]
+        },
+        {
+            "path": "/v1/lists",
+            "name": "Lists",
+            "methods": [
+                {
+                    "MethodName": "List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        }                        
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/lists",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List all lists."
+                },
+                {
+                    "MethodName": "Select",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "list_id",
+                            "Location": "URI",
+                            "Description": "RPAS List ID"                            
+                        }                                                                                                       
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/lists/:list_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a list."
+                }                               
+            ]
+        },
+        {
+            "path": "/v1/products",
+            "name": "Products",
+            "methods": [
+                {
+                    "MethodName": "List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        }                                                                                  
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/products",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List all products."
+                },
+                {
+                    "MethodName": "Select",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "product_id",
+                            "Location": "URI",
+                            "Description": "RPAS ProductID"                            
+                        }                                                                                                       
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/products/:product_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a product."
+                }                               
+            ]
+        },        
+        {
+            "path": "/v1/rated_items",
+            "name": "Rated Items",
+            "methods": [
+                {
+                    "MethodName": "List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "*",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "expand",
+                            "Description": "Expand response object's properties. Use * to retrieve the object in its entirety or a comma delimited list to select which properties to return in the response."
+                        },
+                        {
+                            "Default": "",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "q",
+                            "Description": "Query by datapoint values. The API expects a comma delimited list in the following format: datapoint:value,datapoint:value..."
+                        },                        
+                        {
+                            "Default": "50",
+                            "Required": "N",
+                            "Type": "int",
+                            "Name": "rows",
+                            "Description": "Number of records to retrieve."
+                        },
+                        {
+                            "Default": "0",
+                            "Required": "N",
+                            "Type": "int",
+                            "Name": "offset",
+                            "Description": "Allows for paging results."
+                        },
+                        {
+                            "Default": "DataPointName",
+                            "Required": "N",
+                            "Type": "RPAS Datapoint Name",
+                            "Name": "sort",
+                            "Description": "Datapoint used for sorting."
+                        },
+                        {
+                            "Default": "asc",
+                            "Required": "N",
+                            "Type": "string (asc or desc)",
+                            "Name": "sort_d",
+                            "Description": "Sort order (ascending or descending)."
+                        },
+                        {
+                            "Default": "*",
+                            "Required": "N",
+                            "Type": "RPAS ID",
+                            "Name": "disclosures",
+                            "Description": "Comma delimited list of RPAS DisclosureID(s). To return all associated disclosures, use \"*\". All datapoints utilized by a disclosure must be included in the \"expand\" query parameter to be resolved."
+                        },
+                        {
+                            "Default": "Datapoint Name",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "range_date",
+                            "Description": "Specify a datapoint derived from a chronologic primitive to use it to define a date range."
+                        },
+                        {
+                            "Default": "YYYY-MM-DD",
+                            "Required": "N",
+                            "Type": "date",
+                            "Name": "range_date_floor",
+                            "Description": "Date range minimum."
+                        },
+                        {
+                            "Default": "Disclosures",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "range_date_ceiling",
+                            "Description": "Date range maximum."
+                        }                                              
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/rated_items",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List all rated items."
+                },
+                {
+                    "MethodName": "Select",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"                            
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "document_id",
+                            "Location": "URI",
+                            "Description": "RPAS DocumentID"                            
+                        }                                                                                                       
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/rated_items/:rated_item_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a rated item."
+                }                               
+            ]
+        },        
         {
             "path": "/v1/research_types",
             "name": "Research Types",
@@ -102,6 +556,161 @@
                       "x-its-rpas": "<Request Token>"
                     }                               
                 }            
+            ]
+        },
+        {
+            "path": "/v1/roles",
+            "name": "Roles",
+            "methods": [
+                {
+                    "MethodName": "List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"
+                        } 
+                    ],
+                    "RequiresOAuth": "N",
+                    "basicAuth": true,
+                    "URI": "/roles",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List Tenancy Roles"         
+                },
+                {
+                    "MethodName": "Select",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "role_id",
+                            "Location": "URI",
+                            "Description": "RPAS Role ID or Role Name."
+                        }                          
+                    ],
+                    "RequiresOAuth": "N",
+                    "basicAuth": true,
+                    "URI": "/roles/:role_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a role using either the role ID or role name."         
+                },
+                {
+                    "MethodName": "List Role Users",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "role_id",
+                            "Location": "URI",
+                            "Description": "RPAS Role ID or Role Name."
+                        }                          
+                    ],
+                    "RequiresOAuth": "N",
+                    "basicAuth": true,
+                    "URI": "/roles/:role_id/users",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Lists users belonging to a role."         
+                }                                         
+            ]
+        },        
+        {
+            "path": "/v1/search",
+            "name": "Search",
+            "methods": [
+                {
+                    "MethodName": "Search",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        }, 
+                        {
+                            "Default": "*",
+                            "Required": "N",
+                            "Type": "enumerated",
+                            "Name": "published",
+                            "Location": "query",
+                "EnumeratedList": [
+                    "0",
+                    "1"
+                   ],
+                "EnumeratedDescription": {
+                    "0": "Return Unpublished Documents",
+                    "1": "Return Published Documents"
+                   },                            
+                            "Description": "Search for published or non-published documents."
+                        },
+                        {
+                            "Default": "research_type_id",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "qf",
+                            "Location": "query",
+                            "Description": "Field to query."
+                        },
+                        {
+                            "Default": "research_type_id",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "qv",
+                            "Location": "query",
+                            "Description": "Query value."
+                        }                                                                                         
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/search",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Search products/publications."
+                }              
             ]
         },
         {
@@ -275,15 +884,9 @@
                     "URI": "/taxonomies/:taxonomy_id/rated_items/:rated_item_id",
                     "HTTPMethod": "GET",
                     "Synopsis": "Select a rated item belonging to a specified taxonomy.."
-                }                
-            ]
-        },
-        {
-            "path": "/v1/search",
-            "name": "Search",
-            "methods": [
+                },
                 {
-                    "MethodName": "Search",
+                    "MethodName": "List Taxonomy Rated Item Lists",
                     "parameters": [
                         {
                             "Default": "",
@@ -292,50 +895,59 @@
                             "Name": "x-its-rpas",
                             "Location": "header",
                             "Description": "RPAS Request Token"
-                        }, 
-                        {
-                            "Default": "*",
-                            "Required": "N",
-                            "Type": "enumerated",
-                            "Name": "published",
-                            "Location": "query",
-                "EnumeratedList": [
-                    "0",
-                    "1"
-                   ],
-                "EnumeratedDescription": {
-                    "0": "Return Unpublished Documents",
-                    "1": "Return Published Documents"
-                   },                            
-                            "Description": "Search for published or non-published documents."
                         },
                         {
-                            "Default": "research_type_id",
-                            "Required": "N",
+                            "Default": "application/json",
+                            "Required": "Y",
                             "Type": "string",
-                            "Name": "qf",
-                            "Location": "query",
-                            "Description": "Field to query."
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header."
                         },
                         {
-                            "Default": "research_type_id",
-                            "Required": "N",
-                            "Type": "string",
-                            "Name": "qv",
-                            "Location": "query",
-                            "Description": "Query value."
-                        }                                                                                         
+                            "Default": "",
+                            "Required": "Y",
+                            "Name": "taxonomy_id",
+                            "Type": "RPAS ID",
+                            "Location": "URI",
+                            "Description": "RPAS Taxonomy ID."
+                        }                     
                     ],
                     "RequiresOAuth": "N",
-                    "URI": "/search",
+                    "URI": "/taxonomies/:taxonomy_id/lists",
                     "HTTPMethod": "GET",
-                    "Synopsis": "Search products/publications."
-                }              
+                    "Synopsis": "List all Rated Item Lists belonging to the parent Taxonomy."
+                },
+                {
+                    "MethodName": "Select Coverage List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "rated_item_id",
+                            "Location": "URI",
+                            "Description": "RPAS RatedItemID"
+                        }                        
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/taxonomies/:taxonomy_id/lists/:rated_item_list_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a Rated Item List belonging to the specified Taxonomy."
+                }                                              
             ]
         },
         {
-            "path": "/v1/products",
-            "name": "Products",
+            "path": "/v1/users",
+            "name": "Users",
             "methods": [
                 {
                     "MethodName": "List",
@@ -347,20 +959,21 @@
                             "Name": "x-its-rpas",
                             "Location": "header",
                             "Description": "RPAS Request Token"
-                        }, 
+                        },
                         {
                             "Default": "application/json",
                             "Required": "Y",
                             "Type": "string",
                             "Name": "Accept",
                             "Location": "header",
-                            "Description": "HTTP Accept Header"                            
-                        }                                                                                  
+                            "Description": "HTTP Accept Header"
+                        } 
                     ],
                     "RequiresOAuth": "N",
-                    "URI": "/products",
+                    "basicAuth": true,
+                    "URI": "/users",
                     "HTTPMethod": "GET",
-                    "Synopsis": "List all products."
+                    "Synopsis": "List Tenancy Users"         
                 },
                 {
                     "MethodName": "Select",
@@ -372,62 +985,32 @@
                             "Name": "x-its-rpas",
                             "Location": "header",
                             "Description": "RPAS Request Token"
-                        }, 
+                        },
                         {
                             "Default": "application/json",
                             "Required": "Y",
                             "Type": "string",
                             "Name": "Accept",
                             "Location": "header",
-                            "Description": "HTTP Accept Header"                            
+                            "Description": "HTTP Accept Header"
                         },
                         {
                             "Default": "",
                             "Required": "Y",
                             "Type": "RPAS ID",
-                            "Name": "product_id",
+                            "Name": "user_id",
                             "Location": "URI",
-                            "Description": "RPAS ProductID"                            
-                        }                                                                                                       
+                            "Description": "RPAS User ID."
+                        }                          
                     ],
                     "RequiresOAuth": "N",
-                    "URI": "/products/:product_id",
+                    "basicAuth": true,
+                    "URI": "/users/:user_id",
                     "HTTPMethod": "GET",
-                    "Synopsis": "Select a product."
-                }                               
-            ]
-        },
-        {
-            "path": "/v1/documents",
-            "name": "Documents",
-            "methods": [
-                {
-                    "MethodName": "List",
-                    "parameters": [
-                        {
-                            "Default": "",
-                            "Required": "Y",
-                            "Type": "string",
-                            "Name": "x-its-rpas",
-                            "Location": "header",
-                            "Description": "RPAS Request Token"
-                        }, 
-                        {
-                            "Default": "application/json",
-                            "Required": "Y",
-                            "Type": "string",
-                            "Name": "Accept",
-                            "Location": "header",
-                            "Description": "HTTP Accept Header"                            
-                        }                                                                                  
-                    ],
-                    "RequiresOAuth": "N",
-                    "URI": "/documents",
-                    "HTTPMethod": "GET",
-                    "Synopsis": "List all documents."
+                    "Synopsis": "Select a user."         
                 },
                 {
-                    "MethodName": "Select",
+                    "MethodName": "List User Roles",
                     "parameters": [
                         {
                             "Default": "",
@@ -436,30 +1019,31 @@
                             "Name": "x-its-rpas",
                             "Location": "header",
                             "Description": "RPAS Request Token"
-                        }, 
+                        },
                         {
                             "Default": "application/json",
                             "Required": "Y",
                             "Type": "string",
                             "Name": "Accept",
                             "Location": "header",
-                            "Description": "HTTP Accept Header"                            
+                            "Description": "HTTP Accept Header"
                         },
                         {
                             "Default": "",
                             "Required": "Y",
                             "Type": "RPAS ID",
-                            "Name": "document_id",
+                            "Name": "user_id",
                             "Location": "URI",
-                            "Description": "RPAS DocumentID"                            
-                        }                                                                                                       
+                            "Description": "RPAS User ID."
+                        }                          
                     ],
                     "RequiresOAuth": "N",
-                    "URI": "/documents/:document_id",
+                    "basicAuth": true,
+                    "URI": "/users/:user_id/roles",
                     "HTTPMethod": "GET",
-                    "Synopsis": "Select a document."
-                }                               
+                    "Synopsis": "Return Role resources assigned to a user in their entirety."         
+                }                                            
             ]
-        }                   
+        }                
     ]
 }
