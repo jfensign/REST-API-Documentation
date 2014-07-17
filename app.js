@@ -101,7 +101,9 @@ if (!fs.existsSync(config.apiConfigDir)) {
 }
 
 try {
-    var apisConfig = JSON.parse(JSON.minify(fs.readFileSync(path.join(config.apiConfigDir, 'apiconfig.json'), 'utf8')));
+    var 
+    apisConfig = JSON.parse(JSON.minify(fs.readFileSync(path.join(config.apiConfigDir, 'apiconfig.json'), 'utf8'))),
+    skdsConfig = JSON.parse(JSON.minify(fs.readFileSync(path.join(config.apiConfigDir, 'sdkconfig.json'), 'utf8')));
     if (config.debug) {
         console.log(util.inspect(apisConfig));
     }
@@ -988,14 +990,23 @@ function dynamicHelpers(req, res, next) {
     if (req.params.api) {
         res.locals.apiInfo = apisConfig[req.params.api];
         res.locals.apiName = req.params.api;
-        res.locals.apiDefinition = JSON.parse(JSON.minify(fs.readFileSync(path.join(config.apiConfigDir, req.params.api + '.json'), 'utf8')));
-
+        res.locals.apiDefinition = JSON.parse(JSON.minify(fs.readFileSync(path.join(config.apiConfigDir, req.params.api + '.json'), 'utf8'))); 
         // If the cookie says we're authed for this particular API, set the session to authed as well
         if (req.session[req.params.api] && req.session[req.params.api]['authed']) {
             req.session['authed'] = true;
         }
-    } else {
-        res.locals.apiInfo = apisConfig;
+    } 
+    else {
+     if(req.params.sdk) {
+      res.locals.sdkInfo = [req.params.sdk]
+      res.locals.sdkName = req.params.sdk
+      res.locals.sdkDefinition = JSON.parse(JSON.minify(fs.readFileSync(path.join(config.apiConfigDir, req.params.sdk + '.json'), 'utf8')))
+     }
+     else {
+      res.locals.apiInfo = apisConfig;
+      res.locals.sdkInfo = skdsConfig;
+     } 
+      
     }
 
     res.locals.session = req.session;
@@ -1051,6 +1062,11 @@ app.post('/upload', function(req, res) {
 app.get('/:api([^\.]+)', function(req, res) {
     req.params.api=req.params.api.replace(/\/$/,'');
     res.render('api');
+});
+
+app.get("/sdks/:sdk", function(req, res) {
+ req.params.sdk = req.params.sdk.replace(/\/$/, '')
+ res.render('sdk')
 });
 
 // Only listen on $ node app.js

@@ -1,6 +1,6 @@
 {
-    "rpas": {
-        "name": "RPAS V1",
+    "C#": {
+        "name": "C#",
         "protocol": "http",
         "baseURL": "localhost:3000",
         "publicPath": "",
@@ -8,19 +8,93 @@
         "basicAuth": true,
         "keyParam":"x-its-rpas",
         "booleanTrueVal": true,
-        "booleanFalseVal": false
-    }/*,
-    "taxonomies": {
-        "name": "Taxonomy API",
-        "protocol": "http",
-        "baseURL": "localhost:3000",
-        "publicPath": "",
-        "privatePath": "/v2",
-        "basicAuth": true,
-        "keyParam":"x-its-rpas",
-        "booleanTrueVal": true,
-        "booleanFalseVal": false
+        "booleanFalseVal": false,
+        "url": "http://infotechfb.com"
     },
+    "Clojure": {
+        "name": "Clojure",
+        "protocol": "http",
+        "baseURL": "localhost:3000",
+        "publicPath": "",
+        "privatePath": "/v2",
+        "basicAuth": true,
+        "keyParam":"x-its-rpas",
+        "booleanTrueVal": true,
+        "booleanFalseVal": false,
+        "url": "https://github.com/jfensign/CLJ-RPAS-SDK"
+    },
+    "Erlang": {
+        "name": "Javascript",
+        "protocol": "http",
+        "baseURL": "localhost:3000",
+        "publicPath": "",
+        "privatePath": "/v2",
+        "basicAuth": true,
+        "keyParam":"x-its-rpas",
+        "booleanTrueVal": true,
+        "booleanFalseVal": false,
+        "url": "http://infotechfb.com"
+    },    
+    "Java": {
+        "name": "Java",
+        "protocol": "http",
+        "baseURL": "localhost:3000",
+        "publicPath": "",
+        "privatePath": "/v2",
+        "basicAuth": true,
+        "keyParam":"x-its-rpas",
+        "booleanTrueVal": true,
+        "booleanFalseVal": false,
+        "url": "http://infotechfb.com"
+    },
+    "Javascript": {
+        "name": "Javascript",
+        "protocol": "http",
+        "baseURL": "localhost:3000",
+        "publicPath": "",
+        "privatePath": "/v2",
+        "basicAuth": true,
+        "keyParam":"x-its-rpas",
+        "booleanTrueVal": true,
+        "booleanFalseVal": false,
+        "url": "http://infotechfb.com"
+    },
+    "Perl": {
+        "name": "Perl",
+        "protocol": "http",
+        "baseURL": "localhost:3000",
+        "publicPath": "",
+        "privatePath": "/v2",
+        "basicAuth": true,
+        "keyParam":"x-its-rpas",
+        "booleanTrueVal": true,
+        "booleanFalseVal": false,
+        "url": "http://infotechfb.com"
+    },
+    "PHP": {
+        "name": "PHP",
+        "protocol": "http",
+        "baseURL": "localhost:3000",
+        "publicPath": "",
+        "privatePath": "/v2",
+        "basicAuth": true,
+        "keyParam":"x-its-rpas",
+        "booleanTrueVal": true,
+        "booleanFalseVal": false,
+        "url": "http://infotechfb.com"
+    },
+    "Python": {
+        "name": "Python",
+        "protocol": "http",
+        "baseURL": "localhost:3000",
+        "publicPath": "",
+        "privatePath": "/v2",
+        "basicAuth": true,
+        "keyParam":"x-its-rpas",
+        "booleanTrueVal": true,
+        "booleanFalseVal": false,
+        "url": "http://infotechfb.com"
+    }    /*,
     "users": {
         "name": "User API",
         "protocol": "http",

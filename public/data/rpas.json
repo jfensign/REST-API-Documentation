@@ -482,7 +482,7 @@
                             "Default": "",
                             "Required": "Y",
                             "Type": "RPAS ID",
-                            "Name": "document_id",
+                            "Name": "rated_item_id",
                             "Location": "URI",
                             "Description": "RPAS DocumentID"                            
                         }                                                                                                       

@@ -2,8 +2,16 @@ extends layout
 block content
   h1=title
 
-  h2 Choose an API
+  h2 APIs
 
   ul
      - for (var api in apiInfo)
          li: a(href = api) #{apiInfo[api].name}
+  br
+  h2 SDKs
+
+  ul
+     - for (var sdk in sdkInfo)
+         li: a(href = '#{sdkInfo[sdk].url}') #{sdkInfo[sdk].name}         
+
+

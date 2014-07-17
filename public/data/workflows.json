@@ -1,0 +1,236 @@
+{
+ "endpoints": [
+        {
+            "path": "/v1/taxonomies",
+            "name": "Taxonomies",
+            "methods": [
+                {
+                    "MethodName": "List",
+                    "parameters": [],
+                    "RequiresOAuth": "N",
+                    "URI": "/taxonomies",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List Taxonomies",
+                    "headers": {
+                      "Accept": "application/json",
+                      "x-its-rpas": "<Request Token>"
+                    },
+                    "parameters":[
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header"
+                        }                        
+                    ]                   
+                },
+                {
+                    "MethodName": "Select",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "taxonomy_id",
+                            "Location": "uri",
+                            "Description": "RPAS Request Token"
+                        }                        
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/taxonomies/:taxonomy_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a taxonomy."
+                },
+                {
+                    "MethodName": "List Rated Items",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "taxonomy_id",
+                            "Location": "URI",
+                            "Description": "Taxonomy ID"
+                        },  
+                        {
+                            "Default": "*",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "expand",
+                            "Description": "Expand response object's properties. Use * to retrieve the object in its entirety."
+                        },
+                        {
+                            "Default": "50",
+                            "Required": "N",
+                            "Type": "int",
+                            "Name": "rows",
+                            "Description": "Number of records to retrieve."
+                        },
+                        {
+                            "Default": "0",
+                            "Required": "N",
+                            "Type": "int",
+                            "Name": "offset",
+                            "Description": "Allows for paging results."
+                        },
+                        {
+                            "Default": "DataPointName",
+                            "Required": "N",
+                            "Type": "RPAS Datapoint Name",
+                            "Name": "sort",
+                            "Description": "Datapoint used for sorting."
+                        },
+                        {
+                            "Default": "asc",
+                            "Required": "N",
+                            "Type": "string (asc or desc)",
+                            "Name": "sort_d",
+                            "Description": "Sort order (ascending or descending)."
+                        },
+                        {
+                            "Default": "*",
+                            "Required": "N",
+                            "Type": "RPAS ID",
+                            "Name": "disclosures",
+                            "Description": "Comma delimited list of RPAS DisclosureID(s). To return all associated disclosures, use \"*\". All datapoints utilized by a disclosure must be included in the \"expand\" query parameter to be resolved."
+                        },
+                        {
+                            "Default": "Datapoint Name",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "range_date",
+                            "Description": "Specify a datapoint derived from a chronologic primitive to use it to define a date range."
+                        },
+                        {
+                            "Default": "YYYY-MM-DD",
+                            "Required": "N",
+                            "Type": "date",
+                            "Name": "range_date_floor",
+                            "Description": "Date range minimum."
+                        },
+                        {
+                            "Default": "Disclosures",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "range_date_ceiling",
+                            "Description": "Date range maximum."
+                        }                                              
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/taxonomies/:taxonomy_id/rated_items",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List a taxonomy's rated items."
+                },
+                {
+                    "MethodName": "Select Rated Item",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "rated_item_id",
+                            "Location": "URI",
+                            "Description": "RPAS RatedItemID"
+                        }                        
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/taxonomies/:taxonomy_id/rated_items/:rated_item_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a rated item belonging to a specified taxonomy.."
+                },
+                {
+                    "MethodName": "List Taxonomy Rated Item Lists",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "application/json",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "Accept",
+                            "Location": "header",
+                            "Description": "HTTP Accept Header."
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Name": "taxonomy_id",
+                            "Type": "RPAS ID",
+                            "Location": "URI",
+                            "Description": "RPAS Taxonomy ID."
+                        }                     
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/taxonomies/:taxonomy_id/lists",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "List all Rated Item Lists belonging to the parent Taxonomy."
+                },
+                {
+                    "MethodName": "Select Coverage List",
+                    "parameters": [
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "string",
+                            "Name": "x-its-rpas",
+                            "Location": "header",
+                            "Description": "RPAS Request Token"
+                        },
+                        {
+                            "Default": "",
+                            "Required": "Y",
+                            "Type": "RPAS ID",
+                            "Name": "rated_item_id",
+                            "Location": "URI",
+                            "Description": "RPAS RatedItemID"
+                        }                        
+                    ],
+                    "RequiresOAuth": "N",
+                    "URI": "/taxonomies/:taxonomy_id/lists/:rated_item_list_id",
+                    "HTTPMethod": "GET",
+                    "Synopsis": "Select a Rated Item List belonging to the specified Taxonomy."
+                }                                              
+            ]
+        }
+ ]
+}
