@@ -24,7 +24,7 @@
         "url": "https://github.com/jfensign/CLJ-RPAS-SDK"
     },
     "Erlang": {
-        "name": "Javascript",
+        "name": "Eralng",
         "protocol": "http",
         "baseURL": "localhost:3000",
         "publicPath": "",
@@ -47,8 +47,8 @@
         "booleanFalseVal": false,
         "url": "http://infotechfb.com"
     },
-    "Javascript": {
-        "name": "Javascript",
+    "Node.JS": {
+        "name": "Node.js",
         "protocol": "http",
         "baseURL": "localhost:3000",
         "publicPath": "",
@@ -57,7 +57,7 @@
         "keyParam":"x-its-rpas",
         "booleanTrueVal": true,
         "booleanFalseVal": false,
-        "url": "http://infotechfb.com"
+        "url": "https://github.com/jfensign/node-rpas-sdk"
     },
     "Perl": {
         "name": "Perl",
