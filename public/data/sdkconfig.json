@@ -24,7 +24,7 @@
         "url": "https://github.com/jfensign/CLJ-RPAS-SDK"
     },
     "Erlang": {
-        "name": "Eralng",
+        "name": "Erlang",
         "protocol": "http",
         "baseURL": "localhost:3000",
         "publicPath": "",
