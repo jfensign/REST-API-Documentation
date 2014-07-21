@@ -93,7 +93,7 @@
         "keyParam":"x-its-rpas",
         "booleanTrueVal": true,
         "booleanFalseVal": false,
-        "url": "http://infotechfb.com"
+        "url": "http://github.com/jfensign/Rpas-py"
     }    /*,
     "users": {
         "name": "User API",
