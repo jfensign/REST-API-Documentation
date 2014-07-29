@@ -674,37 +674,53 @@
                             "Description": "RPAS Request Token"
                         }, 
                         {
-                            "Default": "*",
-                            "Required": "N",
-                            "Type": "enumerated",
-                            "Name": "published",
-                            "Location": "query",
-                "EnumeratedList": [
-                    "0",
-                    "1"
-                   ],
-                "EnumeratedDescription": {
-                    "0": "Return Unpublished Documents",
-                    "1": "Return Published Documents"
-                   },                            
-                            "Description": "Search for published or non-published documents."
-                        },
-                        {
-                            "Default": "research_type_id",
+                            "Default": "",
                             "Required": "N",
                             "Type": "string",
-                            "Name": "qf",
+                            "Name": "q",
                             "Location": "query",
-                            "Description": "Field to query."
+                            "Description": "Query."
                         },
                         {
-                            "Default": "research_type_id",
+                            "Default": "",
                             "Required": "N",
                             "Type": "string",
-                            "Name": "qv",
+                            "Name": "facets",
                             "Location": "query",
-                            "Description": "Query value."
-                        }                                                                                         
+                            "Description": "Facet Search"
+                        },
+                        {
+                            "Default": "",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "result_count",
+                            "Location": "query",
+                            "Description": "Number of results to return."
+                        },
+                        {
+                            "Default": "",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "features",
+                            "Location": "query",
+                            "Description": "Fields to return."
+                        },
+                        {
+                            "Default": "",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "sf",
+                            "Location": "query",
+                            "Description": "Field to use for sorting results."
+                        },
+                        {
+                            "Default": "",
+                            "Required": "N",
+                            "Type": "string",
+                            "Name": "sd",
+                            "Location": "query",
+                            "Description": "Sort direction (asc or desc)."
+                        }                                                                                                                                                                                        
                     ],
                     "RequiresOAuth": "N",
                     "URI": "/search",
