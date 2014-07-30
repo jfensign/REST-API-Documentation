@@ -2,7 +2,7 @@
     "rpas": {
         "name": "RPAS V1",
         "protocol": "http",
-        "baseURL": "localhost:3000",
+        "baseURL": "54.214.50.90",
         "publicPath": "",
         "privatePath": "/v2",
         "basicAuth": true,
